@@ -61,3 +61,24 @@ TARGET_LIBINIT_DEFINES_FILE := device/htc/m8/init/init_m8.c
 
 # Inherit from the proprietary version
 -include vendor/htc/m8/BoardConfigVendor.mk
+ 
+# TWRP Build Flags
+BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
+DEVICE_RESOLUTION := 1080x1920
+
+ # SELinux
+ include device/qcom/sepolicy/sepolicy.mk
+ BOARD_SEPOLICY_DIRS += device/htc/m8/sepolicy
+# Fusion Optimizations
+FUSION_OPT=false
+FUSION_O3 := false
+FUSION_STRICT := false
+FUSION_OFAST := true
+FUSION_KRAIT := true
+FUSION_GRAPHITE := true
+FUSION_PIPE := true
+FUSION_ENABLE_GCCONLY := true
+FLOOP_NEST_OPTIMIZE := false
+FUSION_FFAST_MATH := false
+TARGET_FUSION_ROM := 4.9
+TARGET_FUSION_KERNEL := 4.8
